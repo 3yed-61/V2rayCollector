@@ -10,10 +10,10 @@ $content = file_get_contents($url);
 if ($content !== false) {
     // بخش‌های جدید که می‌خواهید در ابتدای فایل قرار بگیرند
     $newSections = [
-        '#profile-title: base64:M3llZCB8IFZMRVNT',
+        '#profile-title: base64:M1lFRPCflLEgfCBWTUVTUw==',
         '#profile-update-interval: 1',
         '#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531',
-        '#profile-web-page-url: https://github.com/nameless4pub/V2rayCollector'
+        '#profile-web-page-url: https://github.com/3yed-61/V2rayCollector'
     ];
 
     // بخش‌های قبلی که می‌خواهید جایگزین شوند
