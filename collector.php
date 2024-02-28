@@ -1,6 +1,6 @@
 <?php
 
-$url = 'https://raw.githubusercontent.com/yebekhe/TVC/main/subscriptions/xray/normal/vmess';
+$url = 'https://raw.githubusercontent.com/yebekhe/TVC/main/subscriptions/xray/normal/tuic';
 $filePath = 'sub/tuic';
 
 $content = file_get_contents($url);
