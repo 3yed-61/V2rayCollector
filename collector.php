@@ -36,7 +36,7 @@ if ($content !== false) {
     unset($line);
 
     $headerSections = [
-        '#profile-title: base64:M1lFRCDik4IgfCBWTUVTUw==',
+        '#profile-title: base64:WUVEIHwgVk1FU1Pwn5Sx',
         '#profile-update-interval: 1',
         '#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531',
         '#profile-web-page-url: https://github.com/3yed-61'
