@@ -9,7 +9,7 @@ if ($content !== false) {
     $content = str_replace("#profile-web-page-url: https://github.com/yebekhe/TelegramV2rayCollector", "#profile-web-page-url: https://github.com/nameless4pub", $content);
 
     
-    file_put_contents("export/tuic.txt", $content);
+    file_put_contents("export/tuic", $content);
     echo "Content successfully saved.";
 } else {
     echo "Error fetching content.";
