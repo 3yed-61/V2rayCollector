@@ -1,7 +1,7 @@
 <?php
 
 $url = 'https://raw.githubusercontent.com/yebekhe/TVC/main/subscriptions/xray/normal/vmess';
-$filePath = 'sub/vmess';
+$filePath = 'sub/tuic';
 
 $content = file_get_contents($url);
 
@@ -12,8 +12,8 @@ if ($content !== false) {
     // Remove everything after the @ symbol
     $content = preg_replace('/@.*/', '', $content);
 
-    function changeNameInVmessLink($vmessLink) {
-        $jsonPart = base64_decode(substr($vmessLink, strpos($vmessLink, '://') + 3));
+    function changeNameInVmessLink($tuicLink) {
+        $jsonPart = base64_decode(substr($vmessLink, strpos($tuicLink, '://') + 3));
         $data = json_decode($jsonPart, true);
 
         if ($data !== null && isset($data['ps'])) {
@@ -21,7 +21,7 @@ if ($content !== false) {
             $data['ps'] = $newName;
             $newJsonPart = base64_encode(json_encode($data));
 
-            return substr_replace($vmessLink, $newJsonPart, strpos($vmessLink, '://') + 3);
+            return substr_replace($tuicLink, $newJsonPart, strpos($tuicLink, '://') + 3);
         }
 
         return $vmessLink;
@@ -29,7 +29,7 @@ if ($content !== false) {
 
     $contentLines = explode(PHP_EOL, $content);
     foreach ($contentLines as &$line) {
-        if (strpos($line, 'vmess://') === 0) {
+        if (strpos($line, 'tuic://') === 0) {
             $line = changeNameInVmessLink($line);
         }
     }
