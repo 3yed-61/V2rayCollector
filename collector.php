@@ -12,7 +12,7 @@ if ($content !== false) {
     $content = str_replace("#profile-web-page-url: https://github.com/yebekhe/TelegramV2rayCollector", "#profile-web-page-url: https://github.com/nameless4pub", $content);
 
     // ذخیره محتوا در یک فایل
-    file_put_contents("export/tuic.txt", $content);
+    file_put_contents("export/tuic", $content);
     echo "محتوا با موفقیت ذخیره شد.";
 } else {
     echo "خطا در دریافت محتوا.";
