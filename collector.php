@@ -1,6 +1,6 @@
 <?php
 
-$url = 'https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/vmess';
+$url = 'https://raw.githubusercontent.com/yebekhe/TVC/main/subscriptions/xray/normal/vmess';
 $filePath = 'sub/vmess';
 
 $content = file_get_contents($url);
