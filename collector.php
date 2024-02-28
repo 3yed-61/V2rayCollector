@@ -1,45 +1,57 @@
 <?php
 
-// URL مورد نظر
 $url = 'https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/vmess';
+$filePath = 'sub/vmess';
 
-// محتوای لینک را دریافت
 $content = file_get_contents($url);
 
-// چک کنید که محتوا با موفقیت دریافت شده است یا خیر
 if ($content !== false) {
-    // بخش‌های جدید که می‌خواهید در ابتدای فایل قرار بگیرند
-    $newSections = [
-        '#profile-title: base64:M1lFRPCflLEgfCBWTUVTUw==',
+    // Remove the unwanted header sections
+    $content = preg_replace('/#profile-title: base64:VFZDIHwgVk1FU1M=.*?#profile-web-page-url: https:\/\/github\.com\/yebekhe\/TelegramV2rayCollector/ms', '', $content);
+
+    // Remove everything after the @ symbol
+    $content = preg_replace('/@.*/', '', $content);
+
+    function changeNameInVmessLink($vmessLink) {
+        $jsonPart = base64_decode(substr($vmessLink, strpos($vmessLink, '://') + 3));
+        $data = json_decode($jsonPart, true);
+
+        if ($data !== null && isset($data['ps'])) {
+            $newName = implode(' | ', array_slice(explode(' | ', $data['ps']), 0, 2)) . ' | 3YED';
+            $data['ps'] = $newName;
+            $newJsonPart = base64_encode(json_encode($data));
+
+            return substr_replace($vmessLink, $newJsonPart, strpos($vmessLink, '://') + 3);
+        }
+
+        return $vmessLink;
+    }
+
+    $contentLines = explode(PHP_EOL, $content);
+    foreach ($contentLines as &$line) {
+        if (strpos($line, 'vmess://') === 0) {
+            $line = changeNameInVmessLink($line);
+        }
+    }
+    unset($line);
+
+    $headerSections = [
+        '#profile-title: base64:M1lFRCDik4IgfCBWTUVTUw==',
         '#profile-update-interval: 1',
         '#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531',
-        '#profile-web-page-url: https://github.com/3yed-61/V2rayCollector'
+        '#profile-web-page-url: https://github.com/3yed-61'
     ];
 
-    // بخش‌های قبلی که می‌خواهید جایگزین شوند
-    $oldSections = [
-        '#profile-title: base64:VFZDIHwgVk1FU1M=',
-        '#profile-update-interval: 1',
-        '#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531',
-        '#support-url: https://t.me/v2raycollector',
-        '#profile-web-page-url: https://github.com/yebekhe/TelegramV2rayCollector'
-    ];
+    $content = implode(PHP_EOL, $headerSections) . PHP_EOL . implode(PHP_EOL, $contentLines);
 
-    // جایگزینی بخش‌های قبلی با بخش‌های جدید
-    $content = str_replace($oldSections, $newSections, $content);
-
-    // مسیر ذخیره فایل
-    $filePath = 'sub/vmess';
-
-    // محتوا را در فایل ذخیره کنید
     $writeResult = file_put_contents($filePath, $content);
 
     if ($writeResult !== false) {
-        echo 'محتوای لینک با موفقیت دریافت، بخش‌های مشخص شده جایگزین و در ' . $filePath . ' ذخیره شد.';
+        echo 'Content successfully fetched and specified sections replaced. Content saved in ' . $filePath . '.';
     } else {
-        echo 'خطا در ذخیره محتوا در فایل.';
+        echo 'Error saving content to the file.';
     }
 } else {
-    echo 'خطا در دریافت محتوای لینک.';
+    echo 'Error fetching content from the link.';
 }
 ?>
