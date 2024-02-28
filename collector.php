@@ -13,14 +13,13 @@ if ($content !== false) {
     $content = preg_replace('/@.*/', '', $content);
 
     function changeNameInTuicLink($tuicLink) {
-        // Assuming that "ps" in tuic link represents the name
-        $pattern = '/ps=([^&]+)/';
+        // Extracting name from the link
+        $pattern = '/\|([^|]+)@TUICity[^|]+\|/';
         preg_match($pattern, $tuicLink, $matches);
 
         if (!empty($matches[1])) {
-            $newName = implode(' | ', array_slice(explode(' | ', $matches[1]), 0, 2)) . ' | 3YED';
-            $newNameEncoded = urlencode($newName);
-            return str_replace($matches[0], 'ps=' . $newNameEncoded, $tuicLink);
+            $nameToRemove = '|%20@' . $matches[1] . '%20|';
+            return str_replace($nameToRemove, '', $tuicLink);
         }
 
         return $tuicLink;
@@ -38,7 +37,7 @@ if ($content !== false) {
         '#profile-title: base64:M1lFRCDik4IgfCBWTUVTUw==',
         '#profile-update-interval: 1',
         '#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531',
-        '#profile-web-page-url: https://github.com/3yed-61'
+        '#profile-web-page-url: https://github.com/nameless4pub'
     ];
 
     $content = implode(PHP_EOL, $headerSections) . PHP_EOL . implode(PHP_EOL, $contentLines);
