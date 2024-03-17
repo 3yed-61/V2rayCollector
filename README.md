@@ -1,7 +1,8 @@
 QR code :
 
-![vmess](https://github.com/3yed-61/V2rayCollector/assets/122279300/9c536a1e-7ec9-4f9f-b45a-c9419b94e266)
+![wmess-qrcode](https://github.com/3yed-61/V2rayCollector/assets/122279300/cf694301-b18a-4a6b-88b2-0553ab4c8456)
 
+---
 SUB LINK :
 
 https://raw.githubusercontent.com/3yed-61/V2rayCollector/main/sub/vmess
