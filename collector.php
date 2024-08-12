@@ -36,10 +36,10 @@ if ($content !== false) {
     unset($line);
 
     $headerSections = [
-        '#profile-title: base64:4q2Q77iPM1lFRCDwn6SWIHwgVk1FU1PirZDvuI8=',
-        '#profile-update-interval: 1',
-        '#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531',
-        '#profile-web-page-url: https://github.com/3yed-61'
+        $warp = "//profile-title: base64:M867zp7EkCDwk4SC8JOGgyBWTUVTU+KtkO+4jw==\n";
+    $warp .= "//profile-update-interval: 1\n";
+    $warp .= "//subscription-userinfo: upload=5368709120; download=645097156608; total=955630223360; expire=1762677732\n";
+    $warp .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
     ];
 
     $content = implode(PHP_EOL, $headerSections) . PHP_EOL . implode(PHP_EOL, $contentLines);
