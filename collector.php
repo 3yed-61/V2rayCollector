@@ -9,7 +9,7 @@ $content = file_get_contents($url);
 if ($content !== false) {
 
     // Remove specific section matching the base64 profile title and profile-web-page-url
-    $content = preg_replace('/#profile-title: base64:VFZDIHwgVk1FU1M=.*?#profile-web-page-url: https:\/\/github\.com\/yebekhe\/TelegramV2rayCollector/ms', '', $content);
+    $content = preg_replace('/#profile-title: base64:VFZDIHwgVk1FU1M=.*?#profile-web-page-url: https:\/\/github\.com\/3yed82\/TelegramV2rayCollector/ms', '', $content);
 
     // Remove content starting with '@'
     $content = preg_replace('/@.*/', '', $content);
