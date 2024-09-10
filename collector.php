@@ -8,9 +8,6 @@ $content = file_get_contents($url);
 
 if ($content !== false) {
 
-    // Remove specific section matching the base64 profile title and profile-web-page-url
-    $content = preg_replace('/#profile-title: base64:VFZDIHwgVk1FU1M=.*?#profile-web-page-url: https:\/\/github\.com\/3yed-61\/TelegramV2rayCollector/ms', '', $content);
-
     // Remove content starting with '@'
     $content = preg_replace('/@.*/', '', $content);
 
@@ -47,7 +44,7 @@ if ($content !== false) {
     $warp .= "//subscription-userinfo: upload=5368709120; download=445097156608; total=955630223360; expire=1762677732\n";
     $warp .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
 
-    // Remove any existing header (if present) using a broader regex pattern that matches all lines starting with //profile-
+    // Generalized regex pattern to remove any existing header that starts with "//profile-*"
     $contentWithoutOldHeader = preg_replace('/\/\/profile-(title|update-interval|userinfo|web-page-url):.*?\n+/s', '', implode(PHP_EOL, $contentLines));
 
     // Add the new header and combine with the rest of the content
