@@ -39,10 +39,10 @@ if ($content !== false) {
     unset($line); // Clean up the reference
 
     // Define the new header
-    $warp = "//profile-title: base64:M867zp7EkCDwk4SC8JOGgyBWTUVTU+KtkO+4jw==\n";
-    $warp .= "//profile-update-interval: 1\n";
-    $warp .= "//subscription-userinfo: upload=5368709120; download=445097156608; total=955630223360; expire=1762677732\n";
-    $warp .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
+    $vmess = "//profile-title: base64:M867zp7EkCDwk4SC8JOGgyBWTUVTU+KtkO+4jw==\n";
+    $vmess .= "//profile-update-interval: 1\n";
+    $vmess .= "//subscription-userinfo: upload=5368709120; download=445097156608; total=955630223360; expire=1762677732\n";
+    $vmess .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
 
     // Generalized regex pattern to remove any existing headers that start with 
     // `//profile-*`, `#profile-*`, `#subscription-*`, or `#support-*`
