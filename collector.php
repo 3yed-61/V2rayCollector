@@ -49,7 +49,7 @@ if ($content !== false) {
     $contentWithoutOldHeader = preg_replace('/(\/\/|#)(profile|subscription|support)-(title|update-interval|userinfo|url):.*?\n+/s', '', implode(PHP_EOL, $contentLines));
 
     // Add the new header and combine with the rest of the content
-    $finalContent = $warp . $contentWithoutOldHeader;
+    $finalContent = $vmess . $contentWithoutOldHeader;
 
     // Write the modified content to the file
     $writeResult = file_put_contents($filePath, $finalContent);
