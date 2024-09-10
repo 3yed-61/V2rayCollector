@@ -3,8 +3,6 @@
 //subscription-userinfo: upload=5368709120; download=445097156608; total=955630223360; expire=1762677732
 //profile-web-page-url: https://github.com/3yed-61
 
-#profile-title: base64:VFZDIHwgVk1FU1MgfCAzWUVE8J+klg==
-#profile-update-interval: 1
 #subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
 #support-url: https://github.com/3yed-61
 vmess://eyJ2IjoiMiIsImFkZCI6IjE3Mi42Ny43MS4xNjAiLCJwb3J0IjoiNDQzIiwiaWQiOiIwNTY0MWNmNS01OGQyLTRiYTQtYTlmMS1iM2NkYTBiMWZiMWQiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJob3N0Ijoib2JkaWkuY2ZkIiwicGF0aCI6IlwvbGlua3dzIiwidGxzIjoidGxzIiwic25pIjoib2JkaWkuY2ZkIiwiYWxwbiI6IiIsImZwIjoiIiwicHMiOiJcdWQ4M2RcdWRlYTlDRiB8IFx1ZDgzZFx1ZGZlMiB8IFx1MmI1MDNZRUQifQ==
