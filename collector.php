@@ -32,7 +32,7 @@ if ($content !== false) {
 
     // Split the content into lines
     $contentLines = explode(PHP_EOL, $content);
-    
+
     // Process each line, modify "vmess://" links
     foreach ($contentLines as &$line) {
         if (strpos($line, 'vmess://') === 0) {
@@ -47,8 +47,8 @@ if ($content !== false) {
     $warp .= "//subscription-userinfo: upload=5368709120; download=445097156608; total=955630223360; expire=1762677732\n";
     $warp .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
 
-    // Remove any existing header (if present)
-    $contentWithoutOldHeader = preg_replace('/\/\/profile-title: base64:.*?\n\/\/profile-web-page-url: .*?\n\n/ms', '', implode(PHP_EOL, $contentLines));
+    // Remove any existing header (if present) using a broader regex pattern
+    $contentWithoutOldHeader = preg_replace('/\/\/profile-title:.*?\/\/profile-web-page-url:.*?\n+/s', '', implode(PHP_EOL, $contentLines));
 
     // Add the new header and combine with the rest of the content
     $finalContent = $warp . $contentWithoutOldHeader;
