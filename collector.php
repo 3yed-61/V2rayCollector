@@ -44,8 +44,9 @@ if ($content !== false) {
     $warp .= "//subscription-userinfo: upload=5368709120; download=445097156608; total=955630223360; expire=1762677732\n";
     $warp .= "//profile-web-page-url: https://github.com/3yed-61\n\n";
 
-    // Generalized regex pattern to remove any existing headers that start with "//profile-*" or "#profile-*"
-    $contentWithoutOldHeader = preg_replace('/(\/\/|#)profile-(title|update-interval|userinfo|web-page-url):.*?\n+/s', '', implode(PHP_EOL, $contentLines));
+    // Generalized regex pattern to remove any existing headers that start with 
+    // `//profile-*`, `#profile-*`, `#subscription-*`, or `#support-*`
+    $contentWithoutOldHeader = preg_replace('/(\/\/|#)(profile|subscription|support)-(title|update-interval|userinfo|url):.*?\n+/s', '', implode(PHP_EOL, $contentLines));
 
     // Add the new header and combine with the rest of the content
     $finalContent = $warp . $contentWithoutOldHeader;
