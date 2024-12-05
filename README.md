@@ -9,5 +9,5 @@
 
 **SUB LINK** :
 ```POV-Ray SDL
-https://raw.githubusercontent.com/3yed-61/V2rayCollector/main/sub/vmess
+https://raw.githubusercontent.com/3yed-61/V2rayCollector/refs/heads/main/sub/vmess
 ```
