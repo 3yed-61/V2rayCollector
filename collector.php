@@ -1,6 +1,6 @@
 <?php
 
-$url = 'https://raw.githubusercontent.com/3yed82/TVC/main/subscriptions/xray/normal/vmess';
+$url = 'https://raw.githubusercontent.com/hamedp-71/Sub_Checker_Creator/refs/heads/main/final.txt#xsfilternet';
 $filePath = 'sub/vmess';
 
 // Fetch content from the URL
