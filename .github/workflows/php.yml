@@ -42,7 +42,7 @@ jobs:
       - name: Commit changes
         run: |
           git add -A
-          git diff --cached --quiet || git commit -m "💡 Automatic update - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M')"
+          git diff --cached --quiet || git commit -m "💡 Automatic update"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
