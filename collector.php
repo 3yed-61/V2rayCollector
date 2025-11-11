@@ -1,6 +1,6 @@
 <?php
 
-$url = 'https://raw.githubusercontent.com/3yed82/TVC/main/subscriptions/xray/normal/vmess';
+$url = 'https://raw.githubusercontent.com/Danialsamadi/v2go/main/Splitted-By-Protocol/vless.txt';
 $filePath = 'sub/vmess';
 
 // Fetch content from the URL
