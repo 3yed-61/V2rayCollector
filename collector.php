@@ -17,7 +17,7 @@ if ($content !== false) {
         $data = json_decode($jsonPart, true);
 
         if ($data !== null && isset($data['ps'])) {
-            $newName = implode(' | ', array_slice(explode(' | ', $data['ps']), 0, 2)) . ' | ⭐3YED';
+            $newName = implode(' | ', array_slice(explode(' | ', $data['ps']), 0, 2)) . ' | 3λΞĐ';
             $data['ps'] = $newName;
             $newJsonPart = base64_encode(json_encode($data));
 
